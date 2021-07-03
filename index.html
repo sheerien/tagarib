@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            padding: 15px;
+        }
+        
+        .item {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        /* .test {
+            color: red;
+            background-color: green;
+        } */
+        /* section {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            padding: 10px;
+            margin: 10px;
+            border: 2px solid red;
+        } */
+        
+        .trave * {
+            border: 2px solid gray;
+            color: gray;
+            padding: 15px;
+            width: 100%;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="demo">
+        this is demo
+        <span>this is span</span>
+    </div>
+    <input type="text" value="this is value" />
+
+    <button id="btn2">Action</button>
+    <button id="btn3">Stop</button>
+    <button id="btn">click</button>
+    <div class="item">this is Div</div>
+
+    <div class="ele">this is element div</div>
+    <div class="applyCss">this is apply Css</div>
+
+    <section>
+
+    </section>
+    <section class="trave">
+        <section>
+            <p>this is first p</p>
+            This is section
+            <div>
+                This is div
+                <ul>
+                    This is ul
+                    <li>
+                        This is li
+                        <span>This is span</span>
+                    </li>
+                </ul>
+            </div>
+            <p>this p</p>
+        </section>
+        <div>this sibling</div>
+    </section>
+
+
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
+</body>
+
+</html>

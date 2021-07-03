@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/todolist.css">
+</head>
+
+<body>
+    <section class="container">
+        <div class="todo-list">
+            <form method="POST" class="todo-form">
+                <input type="text" name="task-input" id="task-input" placeholder="Enter Your Task">
+                <button id="btn-add">Add</button>
+                <!-- <button id="btn-remove">Remove</button> -->
+            </form>
+
+            <ul id="show">
+                <!-- <li>
+                    task 1
+                    <div id="btns">
+                        <button class="btn-finish">finish</button>
+                        <button class="btn-remove">remove</button>
+                    </div>
+                </li> -->
+            </ul>
+
+        </div>
+    </section>
+
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/todolist.js"></script>
+</body>
+
+</html>

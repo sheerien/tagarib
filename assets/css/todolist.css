@@ -1,0 +1,90 @@
+    body {
+        background-color: rgb(165, 165, 164);
+    }
+    
+    .todo-list {
+        width: 80%;
+        margin: 100px auto;
+        background-color: #444;
+        padding: 20px;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+    }
+    
+    .todo-list .todo-form {
+        width: 80%;
+        margin: auto;
+    }
+    
+    .todo-list .todo-form input {
+        width: 80%;
+        padding: 10px;
+        outline: none;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        margin: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+    }
+    
+    .todo-list .todo-form input::placeholder {
+        color: #333;
+    }
+    
+    .todo-list .todo-form button {
+        width: 10%;
+        border: none;
+        padding: 10px;
+        margin-left: 20px;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        cursor: pointer;
+    }
+    
+    #show {
+        background: white;
+        margin: 20px;
+    }
+    
+    #show li {
+        padding: 15px 20px;
+        border-bottom: 1px solid #ccc;
+        position: relative;
+    }
+    
+    #show li #btns {
+        display: inline-block;
+        position: absolute;
+        top: 20%;
+        right: 5px;
+    }
+    
+    #show li #btns .btn-remove {
+        background: red;
+        border: none;
+        color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    #show li #btns .btn-finish {
+        background-color: black;
+        color: #fff;
+        border: none;
+        padding: 5px;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        cursor: pointer;
+    }
