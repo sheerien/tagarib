@@ -224,3 +224,12 @@ if (allElements.length > 0) {
     }
 
 }
+
+// delete all: 
+let deleteAll = document.querySelector('.delete-all')
+deleteAll.addEventListener('click', function() {
+    localStorage.clear()
+    showTask.remove();
+    data = []
+    location.reload();
+})
