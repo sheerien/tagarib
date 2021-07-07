@@ -91,8 +91,54 @@ data.map(task => {
 
 let allElements = [...showTask.children]
 
-console.log(allElements.length)
-    // typeof(finish) != 'undefined' && finish != null
+function blockUpdate(val) {
+    let block = `
+    <span class="task">
+        ${val}
+        <span class="control">
+            <span class="update"><i class="far fa-edit"></i></span>
+            <span class="delete"><i class="far fa-trash-alt"></i></span>
+            <span class="finish"><i class="far fa-check-circle"></i></span>
+        </span>
+
+    </span>
+            `
+    return block;
+}
+
+
+
+// console.log(allElements.length)
+// typeof(finish) != 'undefined' && finish != null
+
+function htmlUpdate(textNode, ele) {
+    // create div => container update elements
+    let updateContainer = document.createElement("div")
+        // add class to div element
+    updateContainer.setAttribute('class', 'div-update ')
+
+    // create submit
+    let inputSubmit = document.createElement("input")
+        // add attributes to input submit
+    inputSubmit.setAttribute('type', 'submit')
+    inputSubmit.setAttribute('class', 'input-submit')
+    inputSubmit.value = "+"
+
+    // create input update value
+    let updateInput = document.createElement("input")
+
+    // add attributes to input update value
+    updateInput.setAttribute("type", "text")
+    updateInput.setAttribute("class", "input-update")
+    updateInput.value = textNode
+    updateContainer.appendChild(updateInput)
+    updateContainer.appendChild(inputSubmit)
+
+    // insert div update element before my element next sibling
+    showTask.insertBefore(updateContainer, ele.nextElementSibling)
+}
+
+
 if (allElements.length > 0) {
     let count = 0
         // finish
@@ -131,32 +177,7 @@ if (allElements.length > 0) {
         })
     }
     // html update
-    function htmlUpdate(textNode, ele) {
-        // create div => container update elements
-        let updateContainer = document.createElement("div")
-            // add class to div element
-        updateContainer.setAttribute('class', 'div-update ')
 
-        // create submit
-        let inputSubmit = document.createElement("input")
-            // add attributes to input submit
-        inputSubmit.setAttribute('type', 'submit')
-        inputSubmit.setAttribute('class', 'input-submit')
-        inputSubmit.value = "+"
-
-        // create input update value
-        let updateInput = document.createElement("input")
-
-        // add attributes to input update value
-        updateInput.setAttribute("type", "text")
-        updateInput.setAttribute("class", "input-update")
-        updateInput.value = textNode
-        updateContainer.appendChild(updateInput)
-        updateContainer.appendChild(inputSubmit)
-
-        // insert div update element before my element next sibling
-        showTask.insertBefore(updateContainer, ele.nextElementSibling)
-    }
     // update
 
     for (let i = 0, len = allElements.length; i < len; i++) {
@@ -166,29 +187,42 @@ if (allElements.length > 0) {
 
             // text Content
             let textNode = ele.textContent.trim()
+                // show-task
 
             // call function htmlUpdate
             htmlUpdate(textNode, ele)
-
-            let task = document.querySelector('.task')
-                // console.log(task)
-                // console.log(task.nextElementSibling)
-
-            console.log('==================================')
 
 
             let updateBtn = document.querySelector('.input-submit');
             console.log(updateBtn)
             updateBtn.addEventListener('click', function(e) {
-                let parent = this.parentNode.previousElementSibling
-                console.log(parent)
+                // console.log(showTask.childElementCount)
+                let parent = this.parentNode
+                    // console.log(parent)
                 let val = this.previousElementSibling.value
                 console.log(val)
+                console.log(typeof val)
+                if (tasks.includes(val) && val != '') {
+                    alert("task exist or empty")
+                } else if (typeof(val) !== "string") {
+                    alert("enter yor text value")
+                } else {
+                    // data.push(val)
+                    let oldVal = e.target.parentNode.previousElementSibling.textContent.trim()
+                    let indexUpdate = data.indexOf(oldVal)
+                    console.log(indexUpdate)
+                    data[indexUpdate] = val
+                    localStorage.setItem('tasks', JSON.stringify(data))
+                    location.reload()
+                        // console.log(dataNew)
+                        // console.log( )
+
+                    e.target.parentNode.previousElementSibling.innerHTML = blockUpdate(val)
+                    e.target.parentNode.remove();
+                }
             })
 
-
         })
-
     }
 
 }
