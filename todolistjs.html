@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-TODO-LIST</title>
+    <!-- start font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- end font -->
+    <!-- start css -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/todolistjs.css">
+    <!-- end css -->
+</head>
+
+<body>
+
+    <section class="container">
+        <div class="todo-list">
+            <form class="add-task">
+                <input type="text" name="task-input" id="task-input" placeholder="Enter Your Task">
+                <input type="submit" value="+">
+            </form>
+            <div class="show-task">
+
+            </div>
+        </div>
+        <div class="task-status">
+            <div class="task-count">
+                Tasks-Count <span>4</span>
+            </div>
+            <div class="task-finish">
+                Tasks-Finished <span>0</span>
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/js/myLib.js"></script>
+    <script src="assets/js/todolistjs.js"></script>
+</body>
+
+</html>

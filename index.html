@@ -43,11 +43,62 @@
             width: 100%;
             display: block;
         }
+        
+        header {
+            background-color: red;
+        }
+        
+        ul {
+            padding: 5px;
+            text-align: center;
+        }
+        
+        ul li {
+            display: inline-block;
+            padding: 10px;
+            background-color: blue;
+            cursor: pointer;
+        }
+        
+        .active {
+            background-color: yellow;
+        }
+        /* ul li:nth-child(1) {
+            background-color: blue;
+        }
+        
+        ul li:nth-child(2) {
+            background-color: green;
+        }
+        
+        ul li:nth-child(3) {
+            background-color: yellow;
+        } */
+        
+        .main div {
+            height: 400px;
+            background-color: blue;
+            margin: 20px;
+        }
+        
+        .main div:not(.home) {
+            display: none;
+        }
+        
+        .scrolling {
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            background-color: green;
+            cursor: pointer;
+            padding: 10px;
+            display: none;
+        }
     </style>
 </head>
 
 <body>
-    <div class="demo">
+    <!-- <div class="demo">
         this is demo
         <span>this is span</span>
     </div>
@@ -81,7 +132,42 @@
             <p>this p</p>
         </section>
         <div>this sibling</div>
-    </section>
+    </section> -->
+
+    <header>
+        <ul>
+            <li>
+                <a data-target="home" href="#">Home</a>
+            </li>
+            <li>
+                <a data-target="about" href="#" class="">About</a>
+            </li>
+            <li>
+                <a data-target="contact" href="#">Contact</a>
+            </li>
+        </ul>
+
+    </header>
+
+    <div class="main">
+        <div class="home">Home Content</div>
+        <div class="about">About Content</div>
+        <div class="contact">Contact Content</div>
+    </div>
+
+    <div class="filter">
+        <button>Web</button>
+        <button>Mobile</button>
+        <button>Lab</button>
+
+        <div class="images">
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+        </div>
+    </div>
+    <div class='scrolling'>scrollTop</div>
+
 
 
     <script src="assets/js/jquery-3.6.0.min.js"></script>
