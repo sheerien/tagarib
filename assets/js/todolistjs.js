@@ -204,14 +204,12 @@ if (allElements.length > 0) {
                 console.log(typeof val)
                 if (tasks.includes(val) && val != '') {
                     alert("task exist or empty")
-                } else if (typeof(val) !== "string") {
-                    alert("enter yor text value")
                 } else {
                     // data.push(val)
                     let oldVal = e.target.parentNode.previousElementSibling.textContent.trim()
                     let indexUpdate = data.indexOf(oldVal)
                     console.log(indexUpdate)
-                    data[indexUpdate] = val
+                    val !== "" ? data[indexUpdate] = val : data[indexUpdate] = oldVal
                     localStorage.setItem('tasks', JSON.stringify(data))
                     location.reload()
                         // console.log(dataNew)
